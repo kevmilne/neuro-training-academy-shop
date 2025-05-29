@@ -1,5 +1,6 @@
 
 import { Clock, Users, Award, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface CourseCardProps {
   title: string;
@@ -9,9 +10,10 @@ interface CourseCardProps {
   price: string;
   features: string[];
   isPopular?: boolean;
+  link: string;
 }
 
-const CourseCard = ({ title, description, duration, level, price, features, isPopular }: CourseCardProps) => {
+const CourseCard = ({ title, description, duration, level, price, features, isPopular, link }: CourseCardProps) => {
   return (
     <div className={`relative bg-gray-800 rounded-xl p-6 transition-all duration-300 hover:transform hover:scale-105 ${
       isPopular ? 'border-2 border-green-500 shadow-2xl shadow-green-500/20' : 'border border-gray-700 hover:border-green-500/50'
@@ -56,10 +58,13 @@ const CourseCard = ({ title, description, duration, level, price, features, isPo
           <span className="text-3xl font-bold text-green-400">{price}</span>
           <span className="text-gray-400"> / course</span>
         </div>
-        <button className="bg-green-500 hover:bg-green-600 text-black font-semibold px-6 py-3 rounded-lg transition-all duration-300 flex items-center space-x-2">
-          <span>Enroll Now</span>
+        <Link 
+          to={link}
+          className="bg-green-500 hover:bg-green-600 text-black font-semibold px-6 py-3 rounded-lg transition-all duration-300 flex items-center space-x-2"
+        >
+          <span>Learn More</span>
           <ArrowRight className="h-4 w-4" />
-        </button>
+        </Link>
       </div>
     </div>
   );

@@ -1,11 +1,12 @@
 
 import CourseCard from "./CourseCard";
 import { Target, Brain, Shield, Code } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Courses = () => {
   const courses = [
     {
-      title: "Mainframe Penetration Testing",
+      title: "Mainframe Offensive Security Tester",
       description: "Master the art of penetrating legacy mainframe systems. Learn advanced techniques for identifying and exploiting vulnerabilities in IBM z/OS, CICS, and other mainframe environments.",
       duration: "5 Days",
       level: "Advanced",
@@ -18,7 +19,8 @@ const Courses = () => {
         "Mainframe Network Protocols",
         "Hands-on Lab Environment"
       ],
-      isPopular: true
+      isPopular: true,
+      link: "/courses/mainframe-offensive-security"
     },
     {
       title: "Cyber Threat Intelligence",
@@ -33,22 +35,56 @@ const Courses = () => {
         "Threat Actor Profiling",
         "Intelligence Report Writing",
         "MITRE ATT&CK Framework"
-      ]
+      ],
+      link: "/courses/cyber-threat-intelligence"
     },
     {
-      title: "Advanced Persistent Threat (APT) Analysis",
-      description: "Deep dive into APT tactics, techniques, and procedures. Learn to identify, track, and counter advanced threat actors in enterprise environments.",
-      duration: "3 Days",
-      level: "Expert",
-      price: "£2,195",
+      title: "Infrastructure Pen Testing Fundamentals",
+      description: "Build a solid foundation in infrastructure penetration testing. Learn essential techniques for testing networks, systems, and applications in enterprise environments.",
+      duration: "4 Days",
+      level: "Beginner",
+      price: "£1,795",
       features: [
-        "APT Campaign Analysis",
-        "Attribution Techniques",
-        "Advanced Forensics",
-        "Incident Response Planning",
-        "Threat Hunting Methodologies",
-        "Real-world Case Studies"
-      ]
+        "Network Reconnaissance",
+        "Vulnerability Scanning",
+        "Service Enumeration",
+        "Exploitation Techniques",
+        "Post-Exploitation",
+        "Professional Reporting"
+      ],
+      link: "/courses/infrastructure-pen-testing"
+    },
+    {
+      title: "Red Teaming and Cyber Scenarios",
+      description: "Master advanced red team operations and realistic cyber scenarios. Learn to simulate sophisticated attacks and test organizational defenses comprehensively.",
+      duration: "5 Days",
+      level: "Expert",
+      price: "£2,795",
+      features: [
+        "Red Team Methodology",
+        "Advanced Social Engineering",
+        "Physical Security Testing",
+        "C2 Framework Usage",
+        "Evasion Techniques",
+        "Purple Team Integration"
+      ],
+      link: "/courses/red-teaming"
+    },
+    {
+      title: "ICS/OT Security Testing",
+      description: "Specialize in Industrial Control Systems and Operational Technology security. Learn to assess critical infrastructure and SCADA systems safely and effectively.",
+      duration: "4 Days",
+      level: "Advanced",
+      price: "£2,295",
+      features: [
+        "ICS/SCADA Architecture",
+        "Industrial Protocol Analysis",
+        "HMI Security Testing",
+        "PLC Programming Security",
+        "Safety System Assessment",
+        "Compliance Frameworks"
+      ],
+      link: "/courses/ics-testing"
     }
   ];
 
