@@ -3,11 +3,10 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
-import { useForm } from "react-hook-form";
 import { toast } from "sonner";
-import { Calendar, LogOut, Save } from "lucide-react";
+import { Calendar, LogOut, Plus, Trash2, BookOpen, HelpCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -16,44 +15,45 @@ interface CourseData {
   name: string;
   date: string;
   eventbriteLink: string;
+  description: string;
+  sections: string[];
+}
+
+interface FAQItem {
+  id: string;
+  question: string;
+  answer: string;
 }
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState<'courses' | 'faqs'>('courses');
   const [courses, setCourses] = useState<CourseData[]>([
     {
       id: "1",
       name: "Cyber Threat Intelligence",
       date: "2024-07-15",
-      eventbriteLink: "https://www.eventbrite.com/e/cyber-threat-intelligence-course-tickets-123456789"
+      eventbriteLink: "https://www.eventbrite.com/e/cyber-threat-intelligence-course-tickets-123456789",
+      description: "Advanced threat intelligence gathering and analysis techniques",
+      sections: ["Intelligence Fundamentals", "Data Collection", "Analysis Techniques", "Reporting"]
     },
     {
       id: "2", 
       name: "Mainframe Offensive Security",
       date: "2024-08-20",
-      eventbriteLink: "https://www.eventbrite.com/e/mainframe-offensive-security-course-tickets-123456790"
-    },
-    {
-      id: "3",
-      name: "Infrastructure Pen Testing",
-      date: "2024-09-10",
-      eventbriteLink: "https://www.eventbrite.com/e/infrastructure-pen-testing-course-tickets-123456791"
-    },
-    {
-      id: "4",
-      name: "Red Teaming",
-      date: "2024-10-05",
-      eventbriteLink: "https://www.eventbrite.com/e/red-teaming-course-tickets-123456792"
-    },
-    {
-      id: "5",
-      name: "ICS Testing",
-      date: "2024-11-12",
-      eventbriteLink: "https://www.eventbrite.com/e/ics-testing-course-tickets-123456793"
+      eventbriteLink: "https://www.eventbrite.com/e/mainframe-offensive-security-course-tickets-123456790",
+      description: "Security testing methodologies for mainframe environments",
+      sections: ["Mainframe Architecture", "Attack Vectors", "Exploitation", "Defense Strategies"]
     }
   ]);
 
-  const form = useForm();
+  const [faqs, setFaqs] = useState<FAQItem[]>([
+    {
+      id: "1",
+      question: "What cybersecurity training courses do you offer?",
+      answer: "We offer comprehensive training in Cyber Threat Intelligence, Mainframe Offensive Security, Infrastructure Penetration Testing, Red Teaming, and ICS/SCADA Testing."
+    }
+  ]);
 
   useEffect(() => {
     // Check if user is authenticated
@@ -62,10 +62,15 @@ const AdminDashboard = () => {
       navigate("/admin");
     }
 
-    // Load courses from localStorage if available
+    // Load data from localStorage
     const savedCourses = localStorage.getItem("adminCourses");
     if (savedCourses) {
       setCourses(JSON.parse(savedCourses));
+    }
+
+    const savedFaqs = localStorage.getItem("faqData");
+    if (savedFaqs) {
+      setFaqs(JSON.parse(savedFaqs));
     }
   }, [navigate]);
 
@@ -75,13 +80,101 @@ const AdminDashboard = () => {
     navigate("/");
   };
 
-  const handleSaveCourse = (courseId: string, field: string, value: string) => {
+  const handleSaveCourse = (courseId: string, field: string, value: string | string[]) => {
     const updatedCourses = courses.map(course => 
       course.id === courseId ? { ...course, [field]: value } : course
     );
     setCourses(updatedCourses);
     localStorage.setItem("adminCourses", JSON.stringify(updatedCourses));
     toast.success("Course updated successfully");
+  };
+
+  const addNewCourse = () => {
+    const newCourse: CourseData = {
+      id: Date.now().toString(),
+      name: "New Course",
+      date: "",
+      eventbriteLink: "",
+      description: "",
+      sections: [""]
+    };
+    const updatedCourses = [...courses, newCourse];
+    setCourses(updatedCourses);
+    localStorage.setItem("adminCourses", JSON.stringify(updatedCourses));
+    toast.success("New course added");
+  };
+
+  const deleteCourse = (courseId: string) => {
+    const updatedCourses = courses.filter(course => course.id !== courseId);
+    setCourses(updatedCourses);
+    localStorage.setItem("adminCourses", JSON.stringify(updatedCourses));
+    toast.success("Course deleted");
+  };
+
+  const addCourseSection = (courseId: string) => {
+    const updatedCourses = courses.map(course => 
+      course.id === courseId 
+        ? { ...course, sections: [...course.sections, ""] }
+        : course
+    );
+    setCourses(updatedCourses);
+    localStorage.setItem("adminCourses", JSON.stringify(updatedCourses));
+  };
+
+  const updateCourseSection = (courseId: string, sectionIndex: number, value: string) => {
+    const updatedCourses = courses.map(course => 
+      course.id === courseId 
+        ? { 
+            ...course, 
+            sections: course.sections.map((section, index) => 
+              index === sectionIndex ? value : section
+            )
+          }
+        : course
+    );
+    setCourses(updatedCourses);
+    localStorage.setItem("adminCourses", JSON.stringify(updatedCourses));
+  };
+
+  const removeCourseSection = (courseId: string, sectionIndex: number) => {
+    const updatedCourses = courses.map(course => 
+      course.id === courseId 
+        ? { 
+            ...course, 
+            sections: course.sections.filter((_, index) => index !== sectionIndex)
+          }
+        : course
+    );
+    setCourses(updatedCourses);
+    localStorage.setItem("adminCourses", JSON.stringify(updatedCourses));
+  };
+
+  const addNewFaq = () => {
+    const newFaq: FAQItem = {
+      id: Date.now().toString(),
+      question: "New Question",
+      answer: "New Answer"
+    };
+    const updatedFaqs = [...faqs, newFaq];
+    setFaqs(updatedFaqs);
+    localStorage.setItem("faqData", JSON.stringify(updatedFaqs));
+    toast.success("New FAQ added");
+  };
+
+  const updateFaq = (faqId: string, field: 'question' | 'answer', value: string) => {
+    const updatedFaqs = faqs.map(faq => 
+      faq.id === faqId ? { ...faq, [field]: value } : faq
+    );
+    setFaqs(updatedFaqs);
+    localStorage.setItem("faqData", JSON.stringify(updatedFaqs));
+    toast.success("FAQ updated successfully");
+  };
+
+  const deleteFaq = (faqId: string) => {
+    const updatedFaqs = faqs.filter(faq => faq.id !== faqId);
+    setFaqs(updatedFaqs);
+    localStorage.setItem("faqData", JSON.stringify(updatedFaqs));
+    toast.success("FAQ deleted");
   };
 
   return (
@@ -95,7 +188,7 @@ const AdminDashboard = () => {
               <Calendar className="mr-3 h-8 w-8 text-red-400" />
               Admin Dashboard
             </h1>
-            <p className="text-gray-600 mt-2">Manage course dates and Eventbrite links</p>
+            <p className="text-gray-600 mt-2">Manage courses, dates, links, and FAQs</p>
           </div>
           
           <Button onClick={handleLogout} variant="outline" className="flex items-center">
@@ -104,26 +197,87 @@ const AdminDashboard = () => {
           </Button>
         </div>
 
-        <div className="grid gap-6">
-          {courses.map((course) => (
-            <Card key={course.id}>
-              <CardHeader>
-                <CardTitle className="text-xl text-gray-900">{course.name}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-2 gap-4">
+        {/* Tab Navigation */}
+        <div className="flex space-x-4 mb-8">
+          <Button 
+            onClick={() => setActiveTab('courses')}
+            variant={activeTab === 'courses' ? 'default' : 'outline'}
+            className="flex items-center"
+          >
+            <BookOpen className="mr-2 h-4 w-4" />
+            Courses
+          </Button>
+          <Button 
+            onClick={() => setActiveTab('faqs')}
+            variant={activeTab === 'faqs' ? 'default' : 'outline'}
+            className="flex items-center"
+          >
+            <HelpCircle className="mr-2 h-4 w-4" />
+            FAQs
+          </Button>
+        </div>
+
+        {/* Courses Tab */}
+        {activeTab === 'courses' && (
+          <div className="space-y-6">
+            <div className="flex justify-between items-center">
+              <h2 className="text-2xl font-bold text-gray-900">Course Management</h2>
+              <Button onClick={addNewCourse} className="flex items-center bg-red-400 hover:bg-red-500">
+                <Plus className="mr-2 h-4 w-4" />
+                Add Course
+              </Button>
+            </div>
+
+            {courses.map((course) => (
+              <Card key={course.id}>
+                <CardHeader className="flex flex-row items-center justify-between">
+                  <CardTitle className="text-xl text-gray-900">Course Details</CardTitle>
+                  <Button 
+                    onClick={() => deleteCourse(course.id)}
+                    variant="outline"
+                    size="sm"
+                    className="text-red-600 hover:text-red-700"
+                  >
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Course Title
+                      </label>
+                      <Input
+                        value={course.name}
+                        onChange={(e) => handleSaveCourse(course.id, "name", e.target.value)}
+                        placeholder="Enter course title"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Course Date
+                      </label>
+                      <Input
+                        type="date"
+                        value={course.date}
+                        onChange={(e) => handleSaveCourse(course.id, "date", e.target.value)}
+                      />
+                    </div>
+                  </div>
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Course Date
+                      Course Description
                     </label>
-                    <Input
-                      type="date"
-                      value={course.date}
-                      onChange={(e) => handleSaveCourse(course.id, "date", e.target.value)}
-                      className="w-full"
+                    <Textarea
+                      value={course.description}
+                      onChange={(e) => handleSaveCourse(course.id, "description", e.target.value)}
+                      placeholder="Enter course description"
+                      rows={3}
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Eventbrite Link
@@ -140,17 +294,104 @@ const AdminDashboard = () => {
                         href={course.eventbriteLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm bg-white hover:bg-gray-50"
+                        className="bg-green-600 text-white px-4 py-2 rounded font-medium hover:bg-green-700 transition-colors"
                       >
-                        View
+                        Book your Space on Event Bright!
                       </a>
                     </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <label className="block text-sm font-medium text-gray-700">
+                        Course Sections
+                      </label>
+                      <Button 
+                        onClick={() => addCourseSection(course.id)}
+                        size="sm"
+                        variant="outline"
+                      >
+                        <Plus className="h-4 w-4 mr-1" />
+                        Add Section
+                      </Button>
+                    </div>
+                    {course.sections.map((section, index) => (
+                      <div key={index} className="flex space-x-2 mb-2">
+                        <Input
+                          value={section}
+                          onChange={(e) => updateCourseSection(course.id, index, e.target.value)}
+                          placeholder={`Section ${index + 1}`}
+                          className="flex-1"
+                        />
+                        <Button 
+                          onClick={() => removeCourseSection(course.id, index)}
+                          size="sm"
+                          variant="outline"
+                          className="text-red-600 hover:text-red-700"
+                        >
+                          <Trash2 className="h-4 w-4" />
+                        </Button>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        )}
+
+        {/* FAQs Tab */}
+        {activeTab === 'faqs' && (
+          <div className="space-y-6">
+            <div className="flex justify-between items-center">
+              <h2 className="text-2xl font-bold text-gray-900">FAQ Management</h2>
+              <Button onClick={addNewFaq} className="flex items-center bg-red-400 hover:bg-red-500">
+                <Plus className="mr-2 h-4 w-4" />
+                Add FAQ
+              </Button>
+            </div>
+
+            {faqs.map((faq) => (
+              <Card key={faq.id}>
+                <CardHeader className="flex flex-row items-center justify-between">
+                  <CardTitle className="text-xl text-gray-900">FAQ Item</CardTitle>
+                  <Button 
+                    onClick={() => deleteFaq(faq.id)}
+                    variant="outline"
+                    size="sm"
+                    className="text-red-600 hover:text-red-700"
+                  >
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Question
+                    </label>
+                    <Input
+                      value={faq.question}
+                      onChange={(e) => updateFaq(faq.id, "question", e.target.value)}
+                      placeholder="Enter FAQ question"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Answer
+                    </label>
+                    <Textarea
+                      value={faq.answer}
+                      onChange={(e) => updateFaq(faq.id, "answer", e.target.value)}
+                      placeholder="Enter FAQ answer"
+                      rows={4}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        )}
       </div>
       
       <Footer />

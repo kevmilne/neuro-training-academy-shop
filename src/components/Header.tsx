@@ -31,6 +31,7 @@ const Header = () => {
                 <a href="/#services" className="text-white hover:text-red-200 transition-colors font-medium">Training</a>
                 <a href="/#contact" className="text-white hover:text-red-200 transition-colors font-medium">Contact</a>
                 <Link to="/mission" className="text-white hover:text-red-200 transition-colors font-medium">Mission</Link>
+                <Link to="/faq" className="text-white hover:text-red-200 transition-colors font-medium">FAQ</Link>
               </nav>
 
               {/* Mobile Menu Button */}
@@ -43,6 +44,16 @@ const Header = () => {
 
               {/* Action Icons */}
               <div className="hidden md:flex items-center space-x-4">
+                {/* Book Now Button */}
+                <a 
+                  href="https://www.eventbrite.com/o/offensivesec-training-123456789" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="bg-white text-red-400 px-4 py-2 rounded font-medium hover:bg-gray-100 transition-colors"
+                >
+                  Book Now
+                </a>
+
                 {/* Calendar Icon for Course Dates */}
                 <a 
                   href="https://www.eventbrite.com/o/offensivesec-training-123456789" 
@@ -81,6 +92,15 @@ const Header = () => {
                   <a href="/#services" className="text-white hover:text-red-200 transition-colors font-medium">Training</a>
                   <a href="/#contact" className="text-white hover:text-red-200 transition-colors font-medium">Contact</a>
                   <Link to="/mission" className="text-white hover:text-red-200 transition-colors font-medium">Mission</Link>
+                  <Link to="/faq" className="text-white hover:text-red-200 transition-colors font-medium">FAQ</Link>
+                  <a 
+                    href="https://www.eventbrite.com/o/offensivesec-training-123456789" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="bg-white text-red-400 px-4 py-2 rounded font-medium hover:bg-gray-100 transition-colors inline-block text-center"
+                  >
+                    Book Now
+                  </a>
                   <a 
                     href="https://www.eventbrite.com/o/offensivesec-training-123456789" 
                     target="_blank" 
