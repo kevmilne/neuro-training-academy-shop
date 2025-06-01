@@ -50,7 +50,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Jane Smith"
-                  className="w-full px-4 py-3 border border-gray-300 focus:border-pink-600 focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 focus:border-red-400 focus:outline-none transition-colors"
                 />
               </div>
 
@@ -66,7 +66,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="email@website.com"
-                  className="w-full px-4 py-3 border border-gray-300 focus:border-pink-600 focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 focus:border-red-400 focus:outline-none transition-colors"
                 />
               </div>
 
@@ -82,7 +82,7 @@ const Contact = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="555-555-5555"
-                  className="w-full px-4 py-3 border border-gray-300 focus:border-pink-600 focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 focus:border-red-400 focus:outline-none transition-colors"
                 />
               </div>
 
@@ -96,7 +96,7 @@ const Contact = () => {
                   rows={6}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 focus:border-pink-600 focus:outline-none transition-colors resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 focus:border-red-400 focus:outline-none transition-colors resize-none"
                 />
               </div>
 
@@ -117,7 +117,7 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="bg-pink-600 hover:bg-pink-700 text-white font-bold px-8 py-4 transition-colors"
+                className="bg-red-400 hover:bg-red-500 text-white font-bold px-8 py-4 transition-colors"
               >
                 Submit
               </button>
@@ -128,7 +128,7 @@ const Contact = () => {
             <div className="mb-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Get in touch</h3>
               <p className="text-gray-700">
-                <a href="mailto:kev.milne@offensivesec.org" className="text-pink-600 hover:text-pink-700 transition-colors">
+                <a href="mailto:kev.milne@offensivesec.org" className="text-red-400 hover:text-red-500 transition-colors">
                   kev.milne@offensivesec.org
                 </a>
               </p>

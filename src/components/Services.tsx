@@ -21,7 +21,7 @@ const Services = () => {
               Master the art of Mainframe Offensive Security with our online, 
               instructor-led course.
             </p>
-            <button className="text-pink-600 font-semibold hover:text-pink-700 transition-colors">
+            <button className="text-red-400 font-semibold hover:text-red-500 transition-colors">
               Read more
             </button>
           </div>
@@ -33,14 +33,14 @@ const Services = () => {
             <p className="text-gray-700 mb-6 leading-relaxed">
               Join our interactive workshops designed for collaborative learning experiences.
             </p>
-            <button className="text-pink-600 font-semibold hover:text-pink-700 transition-colors">
+            <button className="text-red-400 font-semibold hover:text-red-500 transition-colors">
               Read more
             </button>
           </div>
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-pink-600 hover:bg-pink-700 text-white font-bold px-8 py-4 transition-colors">
+          <button className="bg-red-400 hover:bg-red-500 text-white font-bold px-8 py-4 transition-colors">
             Get in touch
           </button>
         </div>

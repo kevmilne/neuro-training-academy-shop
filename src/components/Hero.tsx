@@ -19,7 +19,7 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="mb-6">
-              <span className="text-pink-600 font-bold text-lg border-l-4 border-pink-600 pl-4">
+              <span className="text-red-400 font-bold text-lg border-l-4 border-red-400 pl-4">
                 INVEST IN YOUR OFFENSIVE SECURITY CAREER
               </span>
             </div>
@@ -37,7 +37,7 @@ const Hero = () => {
               offered at a highly competitive price. <strong>M.O.S.T - Mainframe Offensive Security Tester.</strong>
             </p>
             
-            <button className="bg-pink-600 hover:bg-pink-700 text-white font-bold px-8 py-4 transition-colors">
+            <button className="bg-red-400 hover:bg-red-500 text-white font-bold px-8 py-4 transition-colors">
               View services
             </button>
           </div>

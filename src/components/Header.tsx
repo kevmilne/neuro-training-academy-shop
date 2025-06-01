@@ -21,16 +21,16 @@ const Header = () => {
         </div>
         
         {/* Navigation Section */}
-        <div className="flex-1 bg-pink-600">
+        <div className="flex-1 bg-red-400">
           <div className="container mx-auto px-6">
             <div className="flex items-center justify-between">
               {/* Desktop Navigation */}
               <nav className="hidden md:flex items-center space-x-8 py-4">
-                <a href="/#home" className="text-white hover:text-pink-200 transition-colors font-medium">Home</a>
-                <a href="/#about" className="text-white hover:text-pink-200 transition-colors font-medium">About</a>
-                <a href="/#services" className="text-white hover:text-pink-200 transition-colors font-medium">Services</a>
-                <a href="/#contact" className="text-white hover:text-pink-200 transition-colors font-medium">Contact</a>
-                <a href="/#mission" className="text-white hover:text-pink-200 transition-colors font-medium">Mission</a>
+                <a href="/#home" className="text-white hover:text-red-200 transition-colors font-medium">Home</a>
+                <a href="/#about" className="text-white hover:text-red-200 transition-colors font-medium">About</a>
+                <a href="/#services" className="text-white hover:text-red-200 transition-colors font-medium">Services</a>
+                <a href="/#contact" className="text-white hover:text-red-200 transition-colors font-medium">Contact</a>
+                <a href="/#mission" className="text-white hover:text-red-200 transition-colors font-medium">Mission</a>
               </nav>
 
               {/* Mobile Menu Button */}
@@ -43,7 +43,7 @@ const Header = () => {
 
               {/* Contact Icon */}
               <div className="hidden md:block">
-                <a href="mailto:kev.milne@offensivesec.org" className="text-white hover:text-pink-200 transition-colors">
+                <a href="mailto:kev.milne@offensivesec.org" className="text-white hover:text-red-200 transition-colors">
                   <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
@@ -53,13 +53,13 @@ const Header = () => {
 
             {/* Mobile Navigation */}
             {isMenuOpen && (
-              <nav className="md:hidden pb-4 border-t border-pink-500 pt-4">
+              <nav className="md:hidden pb-4 border-t border-red-500 pt-4">
                 <div className="flex flex-col space-y-3">
-                  <a href="/#home" className="text-white hover:text-pink-200 transition-colors font-medium">Home</a>
-                  <a href="/#about" className="text-white hover:text-pink-200 transition-colors font-medium">About</a>
-                  <a href="/#services" className="text-white hover:text-pink-200 transition-colors font-medium">Services</a>
-                  <a href="/#contact" className="text-white hover:text-pink-200 transition-colors font-medium">Contact</a>
-                  <a href="/#mission" className="text-white hover:text-pink-200 transition-colors font-medium">Mission</a>
+                  <a href="/#home" className="text-white hover:text-red-200 transition-colors font-medium">Home</a>
+                  <a href="/#about" className="text-white hover:text-red-200 transition-colors font-medium">About</a>
+                  <a href="/#services" className="text-white hover:text-red-200 transition-colors font-medium">Services</a>
+                  <a href="/#contact" className="text-white hover:text-red-200 transition-colors font-medium">Contact</a>
+                  <a href="/#mission" className="text-white hover:text-red-200 transition-colors font-medium">Mission</a>
                 </div>
               </nav>
             )}
