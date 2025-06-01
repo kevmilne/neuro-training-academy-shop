@@ -12,6 +12,7 @@ import CourseInfrastructurePenTesting from "./pages/CourseInfrastructurePenTesti
 import CourseRedTeaming from "./pages/CourseRedTeaming";
 import CourseICSTesting from "./pages/CourseICSTestin";
 import Instructors from "./pages/Instructors";
+import Mission from "./pages/Mission";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/courses/red-teaming" element={<CourseRedTeaming />} />
           <Route path="/courses/ics-testing" element={<CourseICSTesting />} />
           <Route path="/instructors" element={<Instructors />} />
+          <Route path="/mission" element={<Mission />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
