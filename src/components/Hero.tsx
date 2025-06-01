@@ -1,8 +1,21 @@
 
 const Hero = () => {
   return (
-    <section id="home" className="bg-white py-20 relative">
-      <div className="container mx-auto px-6">
+    <section 
+      id="home" 
+      className="bg-white py-20 relative"
+      style={{
+        backgroundImage: 'url(/lovable-uploads/18600289-3176-4a66-bd74-a7d48c46894b.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      {/* Overlay to make background faint */}
+      <div className="absolute inset-0 bg-white bg-opacity-90"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="mb-6">
@@ -31,8 +44,8 @@ const Hero = () => {
 
           <div className="relative">
             <img 
-              src="/lovable-uploads/5af4a4cf-a433-40b1-a7b2-5546ffbdc8de.png" 
-              alt="Cybersecurity workspace" 
+              src="/lovable-uploads/944eeb89-5aaa-433c-9169-a913460b9607.png" 
+              alt="Mainframe Security Training" 
               className="w-full h-auto rounded-lg shadow-lg"
             />
           </div>
