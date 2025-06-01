@@ -6,7 +6,7 @@ const Mission = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="mb-6">
-              <span className="text-pink-600 font-bold text-lg border-l-4 border-pink-600 pl-4">
+              <span className="text-red-400 font-bold text-lg border-l-4 border-red-400 pl-4">
                 OUR MISSION
               </span>
             </div>

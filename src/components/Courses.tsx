@@ -93,7 +93,7 @@ const Courses = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="flex justify-center mb-6">
-            <div className="flex items-center space-x-3 text-green-400">
+            <div className="flex items-center space-x-3 text-red-400">
               <Target className="h-8 w-8" />
               <Brain className="h-8 w-8" />
               <Shield className="h-8 w-8" />
@@ -101,7 +101,7 @@ const Courses = () => {
             </div>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Professional Training <span className="text-green-400">Courses</span>
+            Professional Training <span className="text-red-400">Courses</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Industry-leading cybersecurity training designed by experts, for experts. 
@@ -117,7 +117,7 @@ const Courses = () => {
         
         <div className="text-center mt-12">
           <p className="text-gray-400 mb-4">Need custom training for your organization?</p>
-          <button className="border-2 border-green-500 text-green-400 hover:bg-green-500 hover:text-black font-semibold px-8 py-3 rounded-lg transition-all duration-300">
+          <button className="border-2 border-red-500 text-red-400 hover:bg-red-500 hover:text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300">
             Request Corporate Training
           </button>
         </div>

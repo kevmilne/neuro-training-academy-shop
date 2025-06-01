@@ -16,7 +16,7 @@ const InstructorSection = () => {
           <div className="bg-white p-8 shadow-lg text-center">
             <div className="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-6"></div>
             <h3 className="text-2xl font-bold text-gray-900 mb-2">Kev Milne</h3>
-            <p className="text-pink-600 font-semibold mb-4">Director and Lead Instructor</p>
+            <p className="text-red-400 font-semibold mb-4">Director and Lead Instructor</p>
             <p className="text-gray-700 leading-relaxed">
               Kev Milne, a seasoned cybersecurity expert, leads the training initiatives 
               at Neuro Training Ltd. His commitment to student success drives his passion 

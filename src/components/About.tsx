@@ -15,7 +15,7 @@ const About = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              About <span className="text-green-400">Neuro Training Ltd</span>
+              About <span className="text-red-400">Neuro Training Ltd</span>
             </h2>
             <p className="text-xl text-gray-300 leading-relaxed">
               Founded by industry veterans with decades of experience in offensive security, 
@@ -33,19 +33,19 @@ const About = () => {
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center space-x-3 text-gray-300">
-                  <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-red-400 flex-shrink-0" />
                   <span>Industry-recognized expert instructors</span>
                 </li>
                 <li className="flex items-center space-x-3 text-gray-300">
-                  <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-red-400 flex-shrink-0" />
                   <span>Hands-on practical learning approach</span>
                 </li>
                 <li className="flex items-center space-x-3 text-gray-300">
-                  <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-red-400 flex-shrink-0" />
                   <span>Real-world scenario training</span>
                 </li>
                 <li className="flex items-center space-x-3 text-gray-300">
-                  <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-red-400 flex-shrink-0" />
                   <span>Continuous curriculum updates</span>
                 </li>
               </ul>
@@ -58,8 +58,8 @@ const About = () => {
                 sets us apart in the cybersecurity training landscape. We provide 
                 specialized knowledge that's rarely available elsewhere.
               </p>
-              <div className="bg-gray-800 p-6 rounded-lg border border-green-500/20">
-                <h4 className="text-lg font-semibold text-green-400 mb-3">Specializations</h4>
+              <div className="bg-gray-800 p-6 rounded-lg border border-red-500/20">
+                <h4 className="text-lg font-semibold text-red-400 mb-3">Specializations</h4>
                 <ul className="space-y-2 text-gray-300">
                   <li>• Legacy System Security</li>
                   <li>• Mainframe Penetration Testing</li>
@@ -74,7 +74,7 @@ const About = () => {
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="flex justify-center mb-3">
-                  <stat.icon className="h-8 w-8 text-green-400" />
+                  <stat.icon className="h-8 w-8 text-red-400" />
                 </div>
                 <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
                 <div className="text-gray-400 text-sm">{stat.label}</div>
