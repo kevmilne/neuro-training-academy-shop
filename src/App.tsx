@@ -17,6 +17,7 @@ import FAQ from "./pages/FAQ";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import CourseBooking from "./pages/CourseBooking";
+import Training from "./pages/Training";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/training" element={<Training />} />
           <Route path="/courses/cyber-threat-intelligence" element={<CourseCyberThreatIntelligence />} />
           <Route path="/courses/mainframe-offensive-security" element={<CourseMainframeOffensiveSecurity />} />
           <Route path="/courses/infrastructure-pen-testing" element={<CourseInfrastructurePenTesting />} />

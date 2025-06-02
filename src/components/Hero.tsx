@@ -38,7 +38,7 @@ const Hero = () => {
             </p>
             
             <a 
-              href="/#services" 
+              href="/training" 
               className="bg-red-400 hover:bg-red-500 text-white font-bold px-8 py-4 transition-colors inline-block"
             >
               Training

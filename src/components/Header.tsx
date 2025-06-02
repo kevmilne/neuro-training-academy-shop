@@ -28,7 +28,7 @@ const Header = () => {
               <nav className="hidden md:flex items-center space-x-8 py-4">
                 <a href="/#home" className="text-white hover:text-red-200 transition-colors font-medium">Home</a>
                 <Link to="/mission" className="text-white hover:text-red-200 transition-colors font-medium">About</Link>
-                <a href="/#services" className="text-white hover:text-red-200 transition-colors font-medium">Training</a>
+                <Link to="/training" className="text-white hover:text-red-200 transition-colors font-medium">Training</Link>
                 <Link to="/faq" className="text-white hover:text-red-200 transition-colors font-medium">FAQ</Link>
               </nav>
 
@@ -83,7 +83,7 @@ const Header = () => {
                 <div className="flex flex-col space-y-3">
                   <a href="/#home" className="text-white hover:text-red-200 transition-colors font-medium">Home</a>
                   <Link to="/mission" className="text-white hover:text-red-200 transition-colors font-medium">About</Link>
-                  <a href="/#services" className="text-white hover:text-red-200 transition-colors font-medium">Training</a>
+                  <Link to="/training" className="text-white hover:text-red-200 transition-colors font-medium">Training</Link>
                   <Link to="/faq" className="text-white hover:text-red-200 transition-colors font-medium">FAQ</Link>
                   <Link 
                     to="/book-now"
