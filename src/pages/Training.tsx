@@ -24,7 +24,7 @@ const Training = () => {
               Professional <span className="text-red-400">Training</span>
             </h1>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Advance your cybersecurity career with our specialized training programs
+              Advance your career with our specialized training programs
             </p>
           </div>
 
@@ -44,9 +44,7 @@ const Training = () => {
                   M.O.S.T - Mainframe Offensive Security Tester
                 </h3>
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                  Master the art of penetrating legacy mainframe systems. Learn advanced 
-                  techniques for identifying and exploiting vulnerabilities in IBM z/OS, 
-                  CICS, and other mainframe environments.
+                  This unique two-day mainframe hacking course provides practical techniques for conducting effective mainframe penetration tests. Delivered over weekends only, the course takes place in a secure, remote-access lab environment where the instructor actively teaches and shadows students throughout. The course is suitable for mainframers, penetration testers, and those pivoting into cyber security roles. As the only publicly available course of its kind—designed and priced to be accessible to both corporate clients and individual learners—it offers significant value and will give you or your team a distinct competitive edge. The course covers the fundamentals of mainframes and penetration testing, with a strong emphasis on hands-on learning to ensure students can fully develop their skills. It also includes a Capture The Flag (CTF) challenge and provides a certificate of completion. Early bird and student discounts are always available, and all participants are entered into a prize draw where one student will win a full course refund. See the full agenda for the weekend’s events.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button 
