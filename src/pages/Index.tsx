@@ -4,7 +4,6 @@ import Hero from "@/components/Hero";
 import Mission from "@/components/Mission";
 import Services from "@/components/Services";
 import InstructorSection from "@/components/InstructorSection";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -15,7 +14,6 @@ const Index = () => {
       <Mission />
       <Services />
       <InstructorSection />
-      <Contact />
       <Footer />
     </div>
   );

@@ -29,7 +29,6 @@ const Header = () => {
                 <a href="/#home" className="text-white hover:text-red-200 transition-colors font-medium">Home</a>
                 <Link to="/mission" className="text-white hover:text-red-200 transition-colors font-medium">About</Link>
                 <a href="/#services" className="text-white hover:text-red-200 transition-colors font-medium">Training</a>
-                <a href="/#contact" className="text-white hover:text-red-200 transition-colors font-medium">Contact</a>
                 <Link to="/faq" className="text-white hover:text-red-200 transition-colors font-medium">FAQ</Link>
               </nav>
 
@@ -85,7 +84,6 @@ const Header = () => {
                   <a href="/#home" className="text-white hover:text-red-200 transition-colors font-medium">Home</a>
                   <Link to="/mission" className="text-white hover:text-red-200 transition-colors font-medium">About</Link>
                   <a href="/#services" className="text-white hover:text-red-200 transition-colors font-medium">Training</a>
-                  <a href="/#contact" className="text-white hover:text-red-200 transition-colors font-medium">Contact</a>
                   <Link to="/faq" className="text-white hover:text-red-200 transition-colors font-medium">FAQ</Link>
                   <Link 
                     to="/book-now"
