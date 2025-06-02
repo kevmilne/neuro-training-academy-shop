@@ -15,17 +15,17 @@ const FAQ = () => {
     {
       id: "1",
       question: "What cybersecurity training courses do you offer?",
-      answer: "We offer comprehensive training in Cyber Threat Intelligence, Mainframe Offensive Security, Infrastructure Penetration Testing, Red Teaming, and ICS/SCADA Testing. Each course is designed by industry experts with real-world experience."
+      answer: "Currently we offer comprehensive training in Mainframe Offensive Security, and Infrastructure Penetration Testing,with further courses on the way!"
     },
     {
       id: "2",
       question: "How long are the training courses?",
-      answer: "Our courses typically range from 3-5 days depending on the subject matter. Each course includes hands-on labs, practical exercises, and comprehensive course materials."
+      answer: "Our courses are two days over selected weekends. Each course includes hands-on labs, practical exercises, and comprehensive course materials."
     },
     {
       id: "3",
       question: "What are the prerequisites for your courses?",
-      answer: "Prerequisites vary by course. Generally, we recommend basic networking knowledge and familiarity with cybersecurity concepts. Specific requirements are listed on each course page."
+      answer: "Prerequisites vary by course. Generally, we recommend basic networking knowledge and familiarity with cybersecurity concepts, as well some Linux knowledge.  However, we do provide small labs that cover the prerequisites. Specific requirements are listed on each course page."
     },
     {
       id: "4",
