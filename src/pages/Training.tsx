@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 
 const Training = () => {
   const handleViewAgenda = () => {
-    // This will open the PDF agenda in a new tab
-    // You can replace this URL with the actual PDF file path
-    window.open("/path-to-your-agenda.pdf", "_blank");
+    // Replace this path with your actual uploaded PDF path
+    // After uploading your PDF, it will have a path like: /lovable-uploads/your-agenda-filename.pdf
+    window.open("/lovable-uploads/most-course-agenda.pdf", "_blank");
   };
 
   return (
@@ -44,7 +44,7 @@ const Training = () => {
                   M.O.S.T - Mainframe Offensive Security Tester
                 </h3>
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                  This unique two-day mainframe hacking course provides practical techniques for conducting effective mainframe penetration tests. Delivered over weekends only, the course takes place in a secure, remote-access lab environment where the instructor actively teaches and shadows students throughout. The course is suitable for mainframers, penetration testers, and those pivoting into cyber security roles. As the only publicly available course of its kind—designed and priced to be accessible to both corporate clients and individual learners—it offers significant value and will give you or your team a distinct competitive edge. The course covers the fundamentals of mainframes and penetration testing, with a strong emphasis on hands-on learning to ensure students can fully develop their skills. It also includes a Capture The Flag (CTF) challenge and provides a certificate of completion. Early bird and student discounts are always available, and all participants are entered into a prize draw where one student will win a full course refund. See the full agenda for the weekend’s events.
+                  This unique two-day mainframe hacking course provides practical techniques for conducting effective mainframe penetration tests. Delivered over weekends only, the course takes place in a secure, remote-access lab environment where the instructor actively teaches and shadows students throughout. The course is suitable for mainframers, penetration testers, and those pivoting into cyber security roles. As the only publicly available course of its kind—designed and priced to be accessible to both corporate clients and individual learners—it offers significant value and will give you or your team a distinct competitive edge. The course covers the fundamentals of mainframes and penetration testing, with a strong emphasis on hands-on learning to ensure students can fully develop their skills. It also includes a Capture The Flag (CTF) challenge and provides a certificate of completion. Early bird and student discounts are always available, and all participants are entered into a prize draw where one student will win a full course refund. See the full agenda for the weekend's events.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button 
