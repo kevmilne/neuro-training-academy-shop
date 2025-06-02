@@ -24,7 +24,7 @@ const Mission = () => {
             <p className="text-xl text-gray-700 leading-relaxed">
               Offensivesec.org, part of Neuro Training Ltd, equips individuals and organizations 
               with the skills to navigate the digital world securely. Through expert-led 
-              cybersecurity training, we empower people to protect themselves and their businesses 
+              cybersecurity and neurodiversity training, we empower people to protect themselves and their businesses 
               while fostering an inclusive learning environment that welcomes diverse perspectives.
             </p>
           </div>
