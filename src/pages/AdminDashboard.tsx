@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -6,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { toast } from "sonner";
-import { Calendar, LogOut, Plus, Trash2, BookOpen, HelpCircle } from "lucide-react";
+import { Calendar, LogOut, Plus, Trash2, BookOpen, HelpCircle, Save } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -55,6 +54,9 @@ const AdminDashboard = () => {
     }
   ]);
 
+  // Track unsaved changes
+  const [unsavedChanges, setUnsavedChanges] = useState<Set<string>>(new Set());
+
   useEffect(() => {
     // Check if user is authenticated
     const isAuthenticated = localStorage.getItem("isAdminAuthenticated");
@@ -80,13 +82,27 @@ const AdminDashboard = () => {
     navigate("/");
   };
 
-  const handleSaveCourse = (courseId: string, field: string, value: string | string[]) => {
+  const handleCourseChange = (courseId: string, field: string, value: string | string[]) => {
     const updatedCourses = courses.map(course => 
       course.id === courseId ? { ...course, [field]: value } : course
     );
     setCourses(updatedCourses);
-    localStorage.setItem("adminCourses", JSON.stringify(updatedCourses));
-    toast.success("Course updated successfully");
+    
+    // Mark this course as having unsaved changes
+    setUnsavedChanges(prev => new Set(prev).add(courseId));
+  };
+
+  const saveCourse = (courseId: string) => {
+    localStorage.setItem("adminCourses", JSON.stringify(courses));
+    
+    // Remove from unsaved changes
+    setUnsavedChanges(prev => {
+      const newSet = new Set(prev);
+      newSet.delete(courseId);
+      return newSet;
+    });
+    
+    toast.success("Course saved successfully");
   };
 
   const addNewCourse = () => {
@@ -100,7 +116,10 @@ const AdminDashboard = () => {
     };
     const updatedCourses = [...courses, newCourse];
     setCourses(updatedCourses);
-    localStorage.setItem("adminCourses", JSON.stringify(updatedCourses));
+    
+    // Mark as having unsaved changes
+    setUnsavedChanges(prev => new Set(prev).add(newCourse.id));
+    
     toast.success("New course added");
   };
 
@@ -108,6 +127,14 @@ const AdminDashboard = () => {
     const updatedCourses = courses.filter(course => course.id !== courseId);
     setCourses(updatedCourses);
     localStorage.setItem("adminCourses", JSON.stringify(updatedCourses));
+    
+    // Remove from unsaved changes if it was there
+    setUnsavedChanges(prev => {
+      const newSet = new Set(prev);
+      newSet.delete(courseId);
+      return newSet;
+    });
+    
     toast.success("Course deleted");
   };
 
@@ -118,7 +145,7 @@ const AdminDashboard = () => {
         : course
     );
     setCourses(updatedCourses);
-    localStorage.setItem("adminCourses", JSON.stringify(updatedCourses));
+    setUnsavedChanges(prev => new Set(prev).add(courseId));
   };
 
   const updateCourseSection = (courseId: string, sectionIndex: number, value: string) => {
@@ -133,7 +160,7 @@ const AdminDashboard = () => {
         : course
     );
     setCourses(updatedCourses);
-    localStorage.setItem("adminCourses", JSON.stringify(updatedCourses));
+    setUnsavedChanges(prev => new Set(prev).add(courseId));
   };
 
   const removeCourseSection = (courseId: string, sectionIndex: number) => {
@@ -146,7 +173,7 @@ const AdminDashboard = () => {
         : course
     );
     setCourses(updatedCourses);
-    localStorage.setItem("adminCourses", JSON.stringify(updatedCourses));
+    setUnsavedChanges(prev => new Set(prev).add(courseId));
   };
 
   const addNewFaq = () => {
@@ -231,15 +258,32 @@ const AdminDashboard = () => {
             {courses.map((course) => (
               <Card key={course.id}>
                 <CardHeader className="flex flex-row items-center justify-between">
-                  <CardTitle className="text-xl text-gray-900">Course Details</CardTitle>
-                  <Button 
-                    onClick={() => deleteCourse(course.id)}
-                    variant="outline"
-                    size="sm"
-                    className="text-red-600 hover:text-red-700"
-                  >
-                    <Trash2 className="h-4 w-4" />
-                  </Button>
+                  <CardTitle className="text-xl text-gray-900">
+                    Course Details
+                    {unsavedChanges.has(course.id) && (
+                      <span className="ml-2 text-sm text-orange-600 font-normal">
+                        (Unsaved changes)
+                      </span>
+                    )}
+                  </CardTitle>
+                  <div className="flex gap-2">
+                    <Button 
+                      onClick={() => saveCourse(course.id)}
+                      className="bg-green-600 hover:bg-green-700 text-white flex items-center"
+                      disabled={!unsavedChanges.has(course.id)}
+                    >
+                      <Save className="h-4 w-4 mr-1" />
+                      Save
+                    </Button>
+                    <Button 
+                      onClick={() => deleteCourse(course.id)}
+                      variant="outline"
+                      size="sm"
+                      className="text-red-600 hover:text-red-700"
+                    >
+                      <Trash2 className="h-4 w-4" />
+                    </Button>
+                  </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="grid md:grid-cols-2 gap-4">
@@ -249,7 +293,7 @@ const AdminDashboard = () => {
                       </label>
                       <Input
                         value={course.name}
-                        onChange={(e) => handleSaveCourse(course.id, "name", e.target.value)}
+                        onChange={(e) => handleCourseChange(course.id, "name", e.target.value)}
                         placeholder="Enter course title"
                       />
                     </div>
@@ -261,7 +305,7 @@ const AdminDashboard = () => {
                       <Input
                         type="date"
                         value={course.date}
-                        onChange={(e) => handleSaveCourse(course.id, "date", e.target.value)}
+                        onChange={(e) => handleCourseChange(course.id, "date", e.target.value)}
                       />
                     </div>
                   </div>
@@ -272,7 +316,7 @@ const AdminDashboard = () => {
                     </label>
                     <Textarea
                       value={course.description}
-                      onChange={(e) => handleSaveCourse(course.id, "description", e.target.value)}
+                      onChange={(e) => handleCourseChange(course.id, "description", e.target.value)}
                       placeholder="Enter course description"
                       rows={3}
                     />
@@ -286,7 +330,7 @@ const AdminDashboard = () => {
                       <Input
                         type="url"
                         value={course.eventbriteLink}
-                        onChange={(e) => handleSaveCourse(course.id, "eventbriteLink", e.target.value)}
+                        onChange={(e) => handleCourseChange(course.id, "eventbriteLink", e.target.value)}
                         placeholder="https://www.eventbrite.com/e/..."
                         className="flex-1"
                       />
