@@ -76,9 +76,9 @@ const Training = () => {
                   Neurodiversity Training Workshops
                 </h3>
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                  Inclusive cybersecurity training designed to leverage diverse thinking 
+                  Inclusive neurodiversity training designed to leverage diverse thinking 
                   styles and cognitive approaches. These workshops will focus on creating 
-                  supportive learning environments for neurodiverse professionals.
+                  supportive learning environments for professionals and cover a variety of topics.
                 </p>
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                   <p className="text-yellow-800 font-medium text-center">
