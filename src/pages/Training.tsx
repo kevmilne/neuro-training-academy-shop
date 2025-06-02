@@ -55,7 +55,7 @@ const Training = () => {
                     View PDF Agenda
                   </Button>
                   <div className="text-sm text-gray-600 flex items-center">
-                    Duration: 5 Days | Level: Advanced
+                    Duration: 2 Days | Level: Intermediate - Some Linux Skills required but will be provided.
                   </div>
                 </div>
               </div>
