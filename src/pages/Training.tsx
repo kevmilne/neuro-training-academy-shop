@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -7,9 +6,8 @@ import { Link } from "react-router-dom";
 
 const Training = () => {
   const handleViewAgenda = () => {
-    // Replace this path with your actual uploaded PDF path
-    // After uploading your PDF, it will have a path like: /lovable-uploads/your-agenda-filename.pdf
-    window.open("/lovable-uploads/most-course-agenda.pdf", "_blank");
+    // Opens the PDF directly from GitHub
+    window.open("https://github.com/kevmilne/MOST-agenda/raw/main/pdf-agenda.pdf", "_blank");
   };
 
   return (
