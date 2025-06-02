@@ -45,11 +45,11 @@ const Hero = () => {
             </a>
           </div>
 
-          <div className="relative">
+          <div className="relative flex justify-center lg:justify-end">
             <img 
               src="/lovable-uploads/944eeb89-5aaa-433c-9169-a913460b9607.png" 
               alt="Mainframe Security Training" 
-              className="w-full h-auto rounded-lg shadow-lg"
+              className="w-80 h-auto rounded-lg shadow-lg"
             />
           </div>
         </div>
