@@ -15,7 +15,7 @@ const FAQ = () => {
     {
       id: "1",
       question: "What cybersecurity training courses do you offer?",
-      answer: "Currently we offer comprehensive training in Mainframe Offensive Security, and Infrastructure Penetration Testing,with further courses on the way!"
+      answer: "Currently we offer comprehensive training in Mainframe Offensive Security, and Infrastructure Penetration Testing, with further courses on the way!"
     },
     {
       id: "2",
