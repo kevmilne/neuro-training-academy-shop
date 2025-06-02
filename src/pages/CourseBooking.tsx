@@ -35,7 +35,7 @@ const CourseBooking = () => {
             </p>
             
             <a
-              href="https://www.eventbrite.com"
+              href="https://www.eventbrite.com/e/mainframe-offensive-security-tester-most-penetration-testing-course-tickets-1391845069069?aff=oddtdtcreator"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"
