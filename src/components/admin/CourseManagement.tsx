@@ -32,7 +32,7 @@ const CourseManagement = ({ courses, setCourses, unsavedChanges, setUnsavedChang
     setCourses(updatedCourses);
     
     // Mark this course as having unsaved changes
-    setUnsavedChanges(prev => new Set(prev).add(courseId));
+    setUnsavedChanges(prev => new Set<string>(prev).add(courseId));
   };
 
   const saveCourse = (courseId: string) => {
@@ -40,7 +40,7 @@ const CourseManagement = ({ courses, setCourses, unsavedChanges, setUnsavedChang
     
     // Remove from unsaved changes
     setUnsavedChanges(prev => {
-      const newSet = new Set(prev);
+      const newSet = new Set<string>(prev);
       newSet.delete(courseId);
       return newSet;
     });
@@ -61,7 +61,7 @@ const CourseManagement = ({ courses, setCourses, unsavedChanges, setUnsavedChang
     setCourses(updatedCourses);
     
     // Mark as having unsaved changes
-    setUnsavedChanges(prev => new Set(prev).add(newCourse.id));
+    setUnsavedChanges(prev => new Set<string>(prev).add(newCourse.id));
     
     toast.success("New course added");
   };
@@ -73,7 +73,7 @@ const CourseManagement = ({ courses, setCourses, unsavedChanges, setUnsavedChang
     
     // Remove from unsaved changes if it was there
     setUnsavedChanges(prev => {
-      const newSet = new Set(prev);
+      const newSet = new Set<string>(prev);
       newSet.delete(courseId);
       return newSet;
     });
@@ -88,7 +88,7 @@ const CourseManagement = ({ courses, setCourses, unsavedChanges, setUnsavedChang
         : course
     );
     setCourses(updatedCourses);
-    setUnsavedChanges(prev => new Set(prev).add(courseId));
+    setUnsavedChanges(prev => new Set<string>(prev).add(courseId));
   };
 
   const updateCourseSection = (courseId: string, sectionIndex: number, value: string) => {
@@ -103,7 +103,7 @@ const CourseManagement = ({ courses, setCourses, unsavedChanges, setUnsavedChang
         : course
     );
     setCourses(updatedCourses);
-    setUnsavedChanges(prev => new Set(prev).add(courseId));
+    setUnsavedChanges(prev => new Set<string>(prev).add(courseId));
   };
 
   const removeCourseSection = (courseId: string, sectionIndex: number) => {
@@ -116,7 +116,7 @@ const CourseManagement = ({ courses, setCourses, unsavedChanges, setUnsavedChang
         : course
     );
     setCourses(updatedCourses);
-    setUnsavedChanges(prev => new Set(prev).add(courseId));
+    setUnsavedChanges(prev => new Set<string>(prev).add(courseId));
   };
 
   return (
