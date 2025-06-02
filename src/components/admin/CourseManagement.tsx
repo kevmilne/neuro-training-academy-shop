@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -6,6 +7,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { toast } from "sonner";
 import { Plus, Trash2, Save } from "lucide-react";
 import CourseCard from "./CourseCard";
+import ImportExport from "./ImportExport";
 
 interface CourseData {
   id: string;
@@ -120,6 +122,13 @@ const CourseManagement = ({ courses, setCourses, unsavedChanges, setUnsavedChang
 
   return (
     <div className="space-y-6">
+      {/* Import/Export Section */}
+      <ImportExport 
+        courses={courses}
+        setCourses={setCourses}
+        setUnsavedChanges={setUnsavedChanges}
+      />
+
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold text-gray-900">Course Management</h2>
         <Button onClick={addNewCourse} className="flex items-center bg-red-400 hover:bg-red-500">
