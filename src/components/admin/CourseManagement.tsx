@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -21,7 +20,7 @@ interface CourseManagementProps {
   courses: CourseData[];
   setCourses: (courses: CourseData[]) => void;
   unsavedChanges: Set<string>;
-  setUnsavedChanges: (changes: Set<string>) => void;
+  setUnsavedChanges: React.Dispatch<React.SetStateAction<Set<string>>>;
 }
 
 const CourseManagement = ({ courses, setCourses, unsavedChanges, setUnsavedChanges }: CourseManagementProps) => {
