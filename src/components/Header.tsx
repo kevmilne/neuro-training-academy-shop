@@ -13,7 +13,7 @@ const Header = () => {
         <div className="bg-white p-4 border-r border-gray-200">
           <Link to="/" className="flex items-center">
             <img 
-              src="/lovable-uploads/8d636020-0c0a-45e9-b55f-8417a339fcab.png" 
+              src="/lovable-uploads/02b66ca6-f406-4786-9007-99e373abceef.png" 
               alt="OffensiveSec.org" 
               className="h-12"
             />
@@ -27,7 +27,7 @@ const Header = () => {
               {/* Desktop Navigation */}
               <nav className="hidden md:flex items-center space-x-8 py-4">
                 <a href="/#home" className="text-white hover:text-red-200 transition-colors font-medium">Home</a>
-                <Link to="/instructors" className="text-white hover:text-red-200 transition-colors font-medium">About Us</Link>
+                <a href="/#about" className="text-white hover:text-red-200 transition-colors font-medium">About</a>
                 <a href="/#services" className="text-white hover:text-red-200 transition-colors font-medium">Training</a>
                 <a href="/#contact" className="text-white hover:text-red-200 transition-colors font-medium">Contact</a>
                 <Link to="/mission" className="text-white hover:text-red-200 transition-colors font-medium">Mission</Link>
@@ -84,7 +84,7 @@ const Header = () => {
               <nav className="md:hidden pb-4 border-t border-red-500 pt-4">
                 <div className="flex flex-col space-y-3">
                   <a href="/#home" className="text-white hover:text-red-200 transition-colors font-medium">Home</a>
-                  <Link to="/instructors" className="text-white hover:text-red-200 transition-colors font-medium">About Us</Link>
+                  <a href="/#about" className="text-white hover:text-red-200 transition-colors font-medium">About</a>
                   <a href="/#services" className="text-white hover:text-red-200 transition-colors font-medium">Training</a>
                   <a href="/#contact" className="text-white hover:text-red-200 transition-colors font-medium">Contact</a>
                   <Link to="/mission" className="text-white hover:text-red-200 transition-colors font-medium">Mission</Link>
