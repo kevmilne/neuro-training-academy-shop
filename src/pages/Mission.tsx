@@ -59,7 +59,7 @@ const Mission = () => {
                   <div className="text-left">
                     <h4 className="text-lg font-semibold text-gray-900 mb-3">Bio</h4>
                     <p className="text-gray-700 leading-relaxed mb-4">
-                      Kev is the Director and Lead Instructor at Neuro Training Ltd, delivering specialised cyber security courses.
+                      Kev Milne is the Director and Lead Instructor at Neuro Training Ltd, delivering specialised cyber security courses.
                     </p>
                     <p className="text-gray-700 leading-relaxed mb-4">
                       With a career spanning over 20 years in the financial sector and a further decade in consultancy, Kev has held roles across both blue and red teams, providing a comprehensive perspective on cyber security operations. Over the past 30 years, he has developed numerous cyber security training programmes.
