@@ -37,9 +37,12 @@ const Hero = () => {
               offered at a highly competitive price. <strong>M.O.S.T - Mainframe Offensive Security Tester.</strong>
             </p>
             
-            <button className="bg-red-400 hover:bg-red-500 text-white font-bold px-8 py-4 transition-colors">
-              View services
-            </button>
+            <a 
+              href="/#services" 
+              className="bg-red-400 hover:bg-red-500 text-white font-bold px-8 py-4 transition-colors inline-block"
+            >
+              Training
+            </a>
           </div>
 
           <div className="relative">
