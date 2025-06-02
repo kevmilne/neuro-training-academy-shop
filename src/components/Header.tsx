@@ -27,10 +27,9 @@ const Header = () => {
               {/* Desktop Navigation */}
               <nav className="hidden md:flex items-center space-x-8 py-4">
                 <a href="/#home" className="text-white hover:text-red-200 transition-colors font-medium">Home</a>
-                <a href="/#about" className="text-white hover:text-red-200 transition-colors font-medium">About</a>
+                <Link to="/mission" className="text-white hover:text-red-200 transition-colors font-medium">About</Link>
                 <a href="/#services" className="text-white hover:text-red-200 transition-colors font-medium">Training</a>
                 <a href="/#contact" className="text-white hover:text-red-200 transition-colors font-medium">Contact</a>
-                <Link to="/mission" className="text-white hover:text-red-200 transition-colors font-medium">Mission</Link>
                 <Link to="/faq" className="text-white hover:text-red-200 transition-colors font-medium">FAQ</Link>
               </nav>
 
@@ -84,10 +83,9 @@ const Header = () => {
               <nav className="md:hidden pb-4 border-t border-red-500 pt-4">
                 <div className="flex flex-col space-y-3">
                   <a href="/#home" className="text-white hover:text-red-200 transition-colors font-medium">Home</a>
-                  <a href="/#about" className="text-white hover:text-red-200 transition-colors font-medium">About</a>
+                  <Link to="/mission" className="text-white hover:text-red-200 transition-colors font-medium">About</Link>
                   <a href="/#services" className="text-white hover:text-red-200 transition-colors font-medium">Training</a>
                   <a href="/#contact" className="text-white hover:text-red-200 transition-colors font-medium">Contact</a>
-                  <Link to="/mission" className="text-white hover:text-red-200 transition-colors font-medium">Mission</Link>
                   <Link to="/faq" className="text-white hover:text-red-200 transition-colors font-medium">FAQ</Link>
                   <Link 
                     to="/book-now"
