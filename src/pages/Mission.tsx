@@ -71,22 +71,25 @@ const Mission = () => {
                 </CardContent>
               </Card>
 
-              {/* Second Instructor */}
+              {/* Rachel Milne */}
               <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow">
                 <CardContent className="p-8 text-center">
                   <div className="mb-6">
                     <img 
                       src="/lovable-uploads/1ebb195e-9fa1-4b71-8dba-92abb1639399.png" 
-                      alt="Instructor" 
+                      alt="Rachel Milne" 
                       className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-red-400"
                     />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Instructor Name</h3>
-                  <p className="text-red-400 font-semibold mb-4">Position Title</p>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Rachel Milne</h3>
+                  <p className="text-red-400 font-semibold mb-4">Director and Diversity Training Lead</p>
                   <div className="text-left">
                     <h4 className="text-lg font-semibold text-gray-900 mb-3">Bio</h4>
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                      Rachel Milne is a doctoral candidate at the University of Cambridge, affiliated with Homerton College and the Faculty of Education. Her research focuses on representations of bodily diversity—disability, queerness, and neurodivergence—in children's fantasy literature.
+                    </p>
                     <p className="text-gray-700 leading-relaxed">
-                      Bio content will be added here for the second instructor.
+                      A neurodivergent scholar and expert in neurodiversity and inclusive education, Rachel is an active member of the Centre for Research in Children's Literature and serves on the Executive Committee of the British Comparative Literature Association. She is also an editorial board member for Mapping the Impossible, is published, has lectured at Queen Margaret University, and mentors at Cambridge University.
                     </p>
                   </div>
                 </CardContent>
