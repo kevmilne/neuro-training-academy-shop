@@ -45,25 +45,21 @@ const Header = () => {
               {/* Action Icons */}
               <div className="hidden md:flex items-center space-x-4">
                 {/* Book Now Button */}
-                <a 
-                  href="https://www.eventbrite.com/o/offensivesec-training-123456789" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <Link 
+                  to="/book-now"
                   className="bg-white text-red-400 px-4 py-2 rounded font-medium hover:bg-gray-100 transition-colors"
                 >
                   Book Now
-                </a>
+                </Link>
 
                 {/* Calendar Icon for Course Dates */}
-                <a 
-                  href="https://www.eventbrite.com/o/offensivesec-training-123456789" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <Link 
+                  to="/book-now"
                   className="text-white hover:text-red-200 transition-colors"
                   title="View Course Dates"
                 >
                   <Calendar className="h-6 w-6" />
-                </a>
+                </Link>
 
                 {/* Admin Button */}
                 <Link 
@@ -93,23 +89,19 @@ const Header = () => {
                   <a href="/#contact" className="text-white hover:text-red-200 transition-colors font-medium">Contact</a>
                   <Link to="/mission" className="text-white hover:text-red-200 transition-colors font-medium">Mission</Link>
                   <Link to="/faq" className="text-white hover:text-red-200 transition-colors font-medium">FAQ</Link>
-                  <a 
-                    href="https://www.eventbrite.com/o/offensivesec-training-123456789" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <Link 
+                    to="/book-now"
                     className="bg-white text-red-400 px-4 py-2 rounded font-medium hover:bg-gray-100 transition-colors inline-block text-center"
                   >
                     Book Now
-                  </a>
-                  <a 
-                    href="https://www.eventbrite.com/o/offensivesec-training-123456789" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  </Link>
+                  <Link 
+                    to="/book-now"
                     className="text-white hover:text-red-200 transition-colors font-medium flex items-center"
                   >
                     <Calendar className="h-4 w-4 mr-2" />
                     Course Dates
-                  </a>
+                  </Link>
                   <Link to="/admin" className="text-white hover:text-red-200 transition-colors font-medium flex items-center">
                     <Settings className="h-4 w-4 mr-2" />
                     Admin
